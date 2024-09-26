@@ -20,6 +20,10 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    ```bash
     npm run android
    ```
+   To run on Tests
+   ```bash
+    npm run test
+   ```
 
 In the output, you'll find options to open the app in a
 
