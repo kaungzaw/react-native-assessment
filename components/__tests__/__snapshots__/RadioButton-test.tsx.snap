@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    [
+      {
+        "backgroundColor": "transparent",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginHorizontal": 30,
+        "marginVertical": 14,
+      },
+      {},
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#11181C",
+        },
+        {
+          "fontSize": 16,
+          "lineHeight": 24,
+        },
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    RadioButton
+  </Text>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "#fff",
+        },
+        {
+          "alignItems": "center",
+          "borderColor": "grey",
+          "borderRadius": 12,
+          "borderWidth": 3,
+          "height": 24,
+          "justifyContent": "center",
+          "width": 24,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#fff",
+          },
+          {
+            "backgroundColor": "grey",
+            "borderRadius": 6,
+            "height": 12,
+            "width": 12,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;

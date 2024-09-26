@@ -1,11 +1,19 @@
-import { useEffect } from "react";
+import {
+  DarkTheme,
+  DefaultTheme,
+  ThemeProvider,
+} from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { onlineManager } from "@tanstack/react-query";
+import { ReactNode, useEffect } from "react";
+import {
+  QueryClient,
+  QueryClientProvider,
+  onlineManager,
+} from "@tanstack/react-query";
 import NetInfo from "@react-native-community/netinfo";
 import "react-native-reanimated";
-import MainLayout from "@/components/MainLayout";
+import { useColorScheme } from "@/hooks/useColorScheme";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -16,7 +24,8 @@ onlineManager.setEventListener((setOnline) => {
   });
 });
 
-export default function RootLayout() {
+export default function MainLayout({ children }: { children: ReactNode }) {
+  const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
@@ -31,13 +40,13 @@ export default function RootLayout() {
     return null;
   }
 
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { retry: 1 } },
+  });
+
   return (
-    <MainLayout>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index" />
-        <Stack.Screen name="qr-code-scanner" />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </MainLayout>
+    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    </ThemeProvider>
   );
 }
